@@ -987,35 +987,42 @@ body {
 
 /*# sourceMappingURL=style.css.map*/
 
-.next-button {
+#next-button {
   position: fixed !important;
-  top: 50% !important;
-  right: 30px !important;
+
+  top: 50vh !important;
+  right: 20px !important;
+
   left: auto !important;
+  bottom: auto !important;
+
+  width: 70px !important;
+  height: 70px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
 
   transform: translateY(-50%) !important;
 
-  width: 60px;
-  height: 60px;
+  background: transparent !important;
+  border: none !important;
 
-  background: transparent;
-  border: none;
-  color: white;
+  color: white !important;
+  font-size: 50px !important;
+  line-height: 1 !important;
 
-  font-size: 45px;
-  line-height: 1;
-
-  cursor: pointer;
+  z-index: 999999 !important;
 
   opacity: 0;
   pointer-events: none;
 
-  z-index: 9999;
+  cursor: pointer;
 
   transition: opacity 1s ease;
 }
 
-.next-button.show {
+#next-button.show {
   opacity: 1;
   pointer-events: auto;
 }
+
