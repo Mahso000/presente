@@ -149,37 +149,50 @@ h1 {
   }
 }
 
+/* SETAS */
+
+#prev-button,
 #next-button {
-  position: fixed !important;
+  position: fixed;
 
-  right: 30px !important;
-  top: 50% !important;
+  top: 50%;
+  transform: translateY(-50%);
 
-  transform: translateY(-50%) !important;
+  width: 60px;
+  height: 60px;
 
-  width: 60px !important;
-  height: 60px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+  font-size: 50px;
+  line-height: 1;
 
-  font-size: 50px !important;
-  line-height: 1 !important;
+  color: white;
 
-  color: white !important;
+  cursor: pointer;
 
-  cursor: pointer !important;
+  z-index: 99999;
 
-  z-index: 99999 !important;
+  opacity: 1;
 
-  opacity: 1 !important;
+  transition: transform 0.3s ease;
+}
 
-  transition: transform 0.3s ease !important;
+#prev-button {
+  left: 30px;
+}
+
+#next-button {
+  right: 30px;
+}
+
+#prev-button:hover {
+  transform: translateY(-50%) translateX(-6px);
 }
 
 #next-button:hover {
-  transform: translateY(-50%) translateX(6px) !important;
+  transform: translateY(-50%) translateX(6px);
 }
 
 .text-box p + p {
