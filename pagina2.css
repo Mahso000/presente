@@ -150,42 +150,34 @@ h1 {
 }
 
 #next-button {
-  position: fixed;
-  right: 35px;
-  top: 50%;
+  position: fixed !important;
 
-  transform: translateY(-50%);
+  right: 30px !important;
+  top: 50% !important;
 
-  width: 55px;
-  height: 55px;
+  transform: translateY(-50%) !important;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 60px !important;
+  height: 60px !important;
 
-  font-size: 42px;
-  color: white;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 
-  cursor: pointer;
-  z-index: 1000;
+  font-size: 50px !important;
+  line-height: 1 !important;
 
-  opacity: 0;
+  color: white !important;
 
-  animation: arrowAppear 1s ease 2.5s forwards;
+  cursor: pointer !important;
 
-  transition: transform 0.3s ease;
+  z-index: 99999 !important;
+
+  opacity: 1 !important;
+
+  transition: transform 0.3s ease !important;
 }
 
 #next-button:hover {
-  transform: translateY(-50%) translateX(5px);
-}
-
-@keyframes arrowAppear {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  transform: translateY(-50%) translateX(6px) !important;
 }
