@@ -148,3 +148,44 @@ h1 {
     margin-bottom: 40px;
   }
 }
+
+#next-button {
+  position: fixed;
+  right: 35px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 42px;
+  color: white;
+
+  cursor: pointer;
+  z-index: 1000;
+
+  opacity: 0;
+
+  animation: arrowAppear 1s ease 2.5s forwards;
+
+  transition: transform 0.3s ease;
+}
+
+#next-button:hover {
+  transform: translateY(-50%) translateX(5px);
+}
+
+@keyframes arrowAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
