@@ -17,8 +17,6 @@ window.addEventListener("load", () => {
     if (arrow) {
       arrow.style.display = "block";
 
-      arrow.onclick = () => {
-        alert("Funcionou! 💗");
       };
     }
   }, 6000);
