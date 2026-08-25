@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(100, 160, 255, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(80, 130, 255, 0.15), transparent 30%),
+    linear-gradient(135deg, #071a3d, #0b2b61, #071735);
+
+  color: white;
+  font-family: Georgia, serif;
+}
+
+.content {
+  width: 90%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: normal;
+  margin-bottom: 70px;
+
+  animation: appear 2s ease forwards;
+}
+
+.texts {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 35px;
+}
+
+.text-box {
+  flex: 1;
+  min-height: 220px;
+
+  padding: 35px 25px;
+
+  border-radius: 25px;
+
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  animation: appear 1.5s ease forwards;
+}
+
+.text-box:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.text-box:nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.text-box:nth-child(3) {
+  animation-delay: 1.3s;
+}
+
+.text-box p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brilhos */
+
+.stars,
+.stars::before,
+.stars::after {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.stars::before,
+.stars::after {
+  content: "";
+  background-image:
+    radial-gradient(circle, white 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1.5px);
+
+  background-size: 170px 190px, 230px 250px, 310px 280px;
+  background-position: 20px 40px, 100px 120px, 50px 200px;
+
+  opacity: 0.45;
+  animation: starsMove 12s linear infinite;
+}
+
+.stars::after {
+  opacity: 0.2;
+  transform: scale(1.3);
+  animation-duration: 18s;
+}
+
+@keyframes starsMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* Celular */
+
+@media (max-width: 700px) {
+  body {
+    overflow-y: auto;
+    padding: 50px 0;
+  }
+
+  .texts {
+    flex-direction: column;
+  }
+
+  .text-box {
+    min-height: 180px;
+  }
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
