@@ -1,9 +1,16 @@
 window.addEventListener("load", () => {
 
-  const arrow = document.getElementById("next-button");
+  const prev = document.getElementById("prev-button");
+  const next = document.getElementById("next-button");
 
-  if (arrow) {
-    arrow.onclick = () => {
+  if (prev) {
+    prev.onclick = () => {
+      window.location.href = "index.html";
+    };
+  }
+
+  if (next) {
+    next.onclick = () => {
       window.location.href = "pagina3.html";
     };
   }
