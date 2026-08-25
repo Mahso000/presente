@@ -1,300 +1,47 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-  min-height: 100vh;
-  overflow: hidden;
+  <title>Memória Favorita ❤️</title>
 
-  background:
-    radial-gradient(circle at 20% 20%, rgba(100, 160, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 80% 70%, rgba(80, 130, 255, 0.15), transparent 30%),
-    linear-gradient(135deg, #071a3d, #0b2b61, #071735);
+  <link rel="stylesheet" href="pagina3.css">
+</head>
 
-  color: white;
-  font-family: Georgia, serif;
-}
+<body>
 
-.memory-page {
-  position: relative;
+  <div class="stars"></div>
 
-  width: 100%;
-  height: 100vh;
+  <main class="memory-page">
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    <h1>Minha memória favorita.</h1>
 
-  padding-top: 8vh;
+    <div class="memory-text">
+      <p>
+        Aqui vai o texto da nossa memória favorita...
+      </p>
+    </div>
 
-  z-index: 2;
-}
+    <div class="polaroid polaroid-1">
+      <img src="foto1.jpg" alt="Nossa memória">
+    </div>
 
-h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: normal;
+    <div class="polaroid polaroid-2">
+      <img src="foto2.jpg" alt="Nossa memória">
+    </div>
 
-  animation: appear 1.5s ease forwards;
+    <div class="polaroid polaroid-3">
+      <img src="foto3.jpg" alt="Nossa memória">
+    </div>
 
-  z-index: 10;
-}
+  </main>
 
-.memory-text {
-  width: min(500px, 70vw);
+  <div id="next-button">→</div>
 
-  margin-top: 35px;
+  <script src="pagina3.js"></script>
 
-  text-align: center;
-
-  z-index: 10;
-
-  animation: appear 1.5s ease 0.4s backwards;
-}
-
-.memory-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-
-  color: rgba(255, 255, 255, 0.92);
-}
-
-/* POLAROIDS */
-
-.polaroid {
-  position: absolute;
-
-  width: 190px;
-  height: 225px;
-
-  padding: 12px;
-  padding-bottom: 42px;
-
-  background: #fff;
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.4),
-    0 0 20px rgba(255, 255, 255, 0.08);
-
-  z-index: 5;
-
-  animation: photoAppear 1.5s ease forwards;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.polaroid img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  display: block;
-}
-
-.polaroid:hover {
-  transform: rotate(0deg) scale(1.08) !important;
-
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.5),
-    0 0 25px rgba(255, 255, 255, 0.15);
-}
-
-/* Foto 1 */
-
-.polaroid-1 {
-  left: 8%;
-  top: 18%;
-
-  transform: rotate(-10deg);
-
-  animation-delay: 0.8s;
-}
-
-/* Foto 2 */
-
-.polaroid-2 {
-  right: 9%;
-  top: 20%;
-
-  transform: rotate(9deg);
-
-  animation-delay: 1.1s;
-}
-
-/* Foto 3 */
-
-.polaroid-3 {
-  left: 15%;
-  bottom: 7%;
-
-  transform: rotate(6deg);
-
-  animation-delay: 1.4s;
-}
-
-/* SETA */
-
-#next-button {
-  position: fixed;
-
-  right: 30px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  width: 60px;
-  height: 60px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-size: 50px;
-  line-height: 1;
-
-  color: white;
-
-  cursor: pointer;
-
-  z-index: 99999;
-
-  opacity: 0;
-
-  animation: arrowAppear 1s ease 2.5s forwards;
-
-  transition: transform 0.3s ease;
-}
-
-#next-button:hover {
-  transform: translateY(-50%) translateX(6px);
-}
-
-/* BRILHOS */
-
-.stars,
-.stars::before,
-.stars::after {
-  position: fixed;
-
-  inset: 0;
-
-  pointer-events: none;
-}
-
-.stars::before,
-.stars::after {
-  content: "";
-
-  background-image:
-    radial-gradient(circle, white 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1.5px),
-    radial-gradient(circle, rgba(255,255,255,0.5) 1px, transparent 1.5px);
-
-  background-size:
-    170px 190px,
-    230px 250px,
-    310px 280px;
-
-  background-position:
-    20px 40px,
-    100px 120px,
-    50px 200px;
-
-  opacity: 0.4;
-
-  animation: starsMove 12s linear infinite;
-}
-
-.stars::after {
-  opacity: 0.2;
-
-  transform: scale(1.3);
-
-  animation-duration: 18s;
-}
-
-/* ANIMAÇÕES */
-
-@keyframes appear {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes photoAppear {
-  from {
-    opacity: 0;
-    transform: translateY(30px) rotate(0deg);
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes arrowAppear {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes starsMove {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-40px);
-  }
-}
-
-/* CELULAR */
-
-@media (max-width: 700px) {
-
-  body {
-    overflow-y: auto;
-  }
-
-  .memory-page {
-    min-height: 100vh;
-    height: auto;
-
-    padding: 60px 0 120px;
-  }
-
-  .memory-text {
-    margin-bottom: 40px;
-  }
-
-  .polaroid {
-    position: relative;
-
-    left: auto;
-    right: auto;
-    top: auto;
-    bottom: auto;
-
-    margin: 20px;
-  }
-
-  .polaroid-1,
-  .polaroid-2,
-  .polaroid-3 {
-    transform: rotate(0deg);
-  }
-}
+</body>
+</html>
+```
