@@ -1,10 +1,13 @@
-onload = () => {
-  const c = setTimeout(() => {
+window.addEventListener("load", () => {
+  setTimeout(() => {
     document.body.classList.remove("not-loaded");
-    clearTimeout(c);
   }, 1000);
 
   setTimeout(() => {
-    document.querySelector(".next-button").classList.add("show");
+    const arrow = document.querySelector(".next-button");
+
+    if (arrow) {
+      arrow.classList.add("show");
+    }
   }, 6000);
-};
+});
