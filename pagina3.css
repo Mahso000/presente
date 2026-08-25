@@ -54,7 +54,7 @@ h1 {
 }
 
 .memory-text p {
-  font-size: 1.35rem;
+  font-size: 1.5rem !important;
   line-height: 1.7;
 
   color: rgba(255, 255, 255, 0.92);
