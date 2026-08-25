@@ -9,6 +9,10 @@ window.addEventListener("load", () => {
 
     if (arrow) {
       arrow.style.display = "block";
+
+      arrow.addEventListener("click", () => {
+        alert("Funcionou! 💗");
+      });
     }
   }, 6000);
 
