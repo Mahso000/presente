@@ -986,3 +986,29 @@ body {
 }
 
 /*# sourceMappingURL=style.css.map */
+.next-button {
+  position: fixed;
+  right: 40px;
+  top: 50%;
+
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 999;
+
+  transition: opacity 1s ease, transform 1s ease;
+
+  transform: translateY(-50%);
+}
+
+.next-button.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%);
+}
