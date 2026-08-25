@@ -988,15 +988,23 @@ body {
 /*# sourceMappingURL=style.css.map*/
 
 .next-button {
-  position: fixed;
-  right: 40px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed !important;
+  top: 50% !important;
+  right: 30px !important;
+  left: auto !important;
+
+  transform: translateY(-50%) !important;
+
+  width: 60px;
+  height: 60px;
 
   background: transparent;
   border: none;
   color: white;
-  font-size: 40px;
+
+  font-size: 45px;
+  line-height: 1;
+
   cursor: pointer;
 
   opacity: 0;
