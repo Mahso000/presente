@@ -181,3 +181,17 @@ h1 {
 #next-button:hover {
   transform: translateY(-50%) translateX(6px) !important;
 }
+
+.text-box p + p {
+  margin-top: 20px;
+}
+
+.final-love {
+  margin-top: 30px !important;
+  font-size: 1.3rem !important;
+}
+
+.final-love span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
