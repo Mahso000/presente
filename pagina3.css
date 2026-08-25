@@ -300,3 +300,6 @@ h1 {
   }
 }
 ```
+.memory-text p + p {
+  margin-top: 12px;
+}
