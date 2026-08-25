@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     const arrow = document.getElementById("next-button");
 
     if (arrow) {
-      arrow.classList.add("show");
+      arrow.style.display = "block";
     }
   }, 6000);
 
